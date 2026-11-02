@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run registry:build && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "registry:build": "node scripts/build-registry.mjs && shadcn build"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
@@ -47,6 +48,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
+    "shadcn": "^4.22.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

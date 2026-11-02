@@ -43,6 +43,37 @@ src/
 └── utils/        # Helpers (cn, tv, polymorphic, recursive-clone-children)
 ```
 
+## shadcn Registry & MCP
+
+This starter doubles as a [shadcn registry](https://ui.shadcn.com/docs/registry), so any project can install AlignUI components with the shadcn CLI, and AI assistants can discover them through the shadcn MCP server.
+
+`npm run registry:build` generates `registry.json` from `src/components/ui`, `src/hooks` and `src/utils` (npm and component dependencies are inferred from imports) and writes the installable payloads to `public/r/*.json`. It runs automatically as part of `npm run build`. Item URLs use `REGISTRY_URL`, falling back to `VERCEL_PROJECT_PRODUCTION_URL` on Vercel and `http://localhost:3000` locally.
+
+AlignUI design tokens live in `src/styles/alignui.css` and ship with the `base` item, which every component depends on.
+
+### Using it in another project
+
+Add the namespace to the project's `components.json`:
+
+```json
+{
+  "registries": {
+    "@alignui": "https://<your-deployment>/r/{name}.json"
+  }
+}
+```
+
+Then install components (dependencies, utils and tokens come along):
+
+```bash
+npx shadcn@latest add @alignui/button @alignui/modal
+npx shadcn@latest search @alignui --query "date picker"
+```
+
+### MCP
+
+With the namespace configured, run `npx shadcn@latest mcp init --client claude` (or `cursor`, `vscode`) in that project. The assistant can then search, view and install `@alignui` components on its own.
+
 ## Included Components
 
 `accordion`, `alert`, `avatar`, `avatar-group`, `badge`, `banner`, `button`,
