@@ -1,5 +1,5 @@
 import * as React from "react";
-import { XIcon } from "@phosphor-icons/react";
+import { XIcon } from "@phosphor-icons/react/dist/ssr";
 
 import type { PolymorphicComponentProps } from "@/utils/polymorphic";
 import { recursiveCloneChildren } from "@/utils/recursive-clone-children";

@@ -5,7 +5,7 @@ import {
   WarningCircleIcon,
   InfoIcon,
   MagicWandIcon,
-} from "@phosphor-icons/react";
+} from "@phosphor-icons/react/dist/ssr";
 
 import * as Alert from "@/components/ui/alert";
 import { toast } from "@/components/ui/toast";

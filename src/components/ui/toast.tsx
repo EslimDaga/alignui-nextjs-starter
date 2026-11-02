@@ -1,3 +1,5 @@
+"use client";
+
 import { toast as sonnerToast, Toaster, type ToasterProps } from "sonner";
 
 const defaultOptions: ToasterProps = {

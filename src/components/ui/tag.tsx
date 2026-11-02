@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
-import { XIcon } from "@phosphor-icons/react";
+import { XIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { PolymorphicComponentProps } from "@/utils/polymorphic";
 import { recursiveCloneChildren } from "@/utils/recursive-clone-children";
